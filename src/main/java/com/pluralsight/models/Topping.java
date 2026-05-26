@@ -51,11 +51,11 @@ public class Topping
         {
             price = switch (sandwichSize)
             {
-                case 1 ->    // 4-inch
+                case 4 ->    // 4-inch
                         1.00;
-                case 2 ->   // 8-inch
+                case 8 ->   // 8-inch
                         2.00;
-                case 3 ->    // 12-inch
+                case 12 ->    // 12-inch
                         3.00;
                 default -> price;
             };
@@ -69,11 +69,11 @@ public class Topping
         if (category == ToppingCategory.MEAT && extra)
         {
             price = switch (sandwichSize) {
-                case 1 ->    // 4-inch
+                case 4 ->    // 4-inch
                         0.50;
-                case 2 ->   // 8-inch
+                case 8 ->   // 8-inch
                         1.00;
-                case 3 ->    // 12-inch
+                case 12 ->    // 12-inch
                         1.50;
                 default -> price;
             };
@@ -86,11 +86,11 @@ public class Topping
         if (category == ToppingCategory.CHEESE)
         {
             price = switch (sandwichSize) {
-                case 1 ->     // 4-inch
+                case 4 ->     // 4-inch
                         0.75;
-                case 2 ->   // 8-inch
+                case 8 ->   // 8-inch
                         1.50;
-                case 3 ->    // 12-inch
+                case 12 ->    // 12-inch
                         2.25;
                 default -> price;
             };
@@ -103,11 +103,11 @@ public class Topping
         if (category == ToppingCategory.CHEESE && extra)
         {
             price = switch (sandwichSize) {
-                case 1 ->     // 4-inch
+                case 4 ->     // 4-inch
                         0.30;
-                case 2 ->   // 8-inch
+                case 8 ->   // 8-inch
                         0.60;
-                case 3 ->    // 12-inch
+                case 12 ->    // 12-inch
                         0.90;
                 default -> price;
             };
