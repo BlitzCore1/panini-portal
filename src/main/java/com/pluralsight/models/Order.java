@@ -7,7 +7,7 @@ public class Order
     private ArrayList<OrderItem> items;
 
     public Order() {
-        this.items = new ArrayList<OrderItem>();
+        this.items = new ArrayList<>();
     }
 
     public void addOrderItem(OrderItem orderItem)
@@ -32,13 +32,14 @@ public class Order
 
     public String getReceipt()
     {
-        String receipt = "";
+        StringBuilder receipt = new StringBuilder();
+
         for (OrderItem item : items)
         {
-            receipt += item.getReceiptLine() + "\n";
+            receipt.append(item.getReceiptLine()).append("\n");
         }
-        receipt += "Total: $" + getTotal();
-        return receipt;
+        receipt.append("Total: $").append(getTotal());
+        return receipt.toString();
     }
 
     public boolean isEmpty()
