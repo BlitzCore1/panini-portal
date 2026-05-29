@@ -37,14 +37,25 @@ public class UserInterface
         }
     }
 
-    public void displayHomescreen()
-    {
-        System.out.println();
-        System.out.println("================================");
-        System.out.println(" HOME SCREEN");
-        System.out.println("================================");
-        System.out.println("1) Start New Order ");
-        System.out.println("0) Exit Application ");
+    public void displayHomescreen() {
+        System.out.println("""
+        ==================================================
+        
+            ____              _       _   ____            _        _ 
+           |  _ \\ __ _ _ __  (_) ___ (_) |  _ \\ ___  _ __| |_ __ _| |
+           | |_) / _` | '_ \\ | |/ _ \\| | | |_) / _ \\| '__| __/ _` | |
+           |  __/ (_| | | | || | (_) | | |  __/ (_) | |  | || (_| | |
+           |_|   \\__,_|_| |_|/ |\\___// | |_|   \\___/|_|   \\__\\__,_|_|
+                            |__/     |__/                            
+        
+                  Build Your Perfect Sandwich
+                      
+        ==================================================
+        1) Start New Order
+        0) Exit Application
+        --------------------------------------------------
+        Choose an option: 
+        """);
     }
 
     public void displayOrder(Order order)
