@@ -13,7 +13,7 @@ A console-based deli ordering application that allows users to build sandwiches,
 - Save receipt to file
 
 ## How to Run
-1. Open the project in IntelliJ
+1. Open the project in IntelliJ.
 2. Run `Program.java`
 
 ## Project Structure
