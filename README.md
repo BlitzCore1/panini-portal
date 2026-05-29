@@ -2,7 +2,7 @@
 
 ## Description
 A console-based deli ordering application that allows users to build sandwiches, add drinks and chips, checkout, and save receipts.
-
+![panini-portal.png](images/panini-portal.png)
 
 ## Features
 
@@ -13,7 +13,7 @@ A console-based deli ordering application that allows users to build sandwiches,
 - Save receipt to file
 
 ## How to Run
-1. Open the project in IntelliJ.
+1. Open the project in IntelliJ
 2. Run `Program.java`
 
 ## Project Structure
@@ -41,3 +41,6 @@ src/main/java/com/pluralsight
 ```
 
 ## Screenshots
+![home-screen.png](images/home-screen.png)
+![order-screen.png](images/order-screen.png)
+![checkout-screen.png](images/checkout-screen.png)
