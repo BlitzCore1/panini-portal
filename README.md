@@ -40,6 +40,9 @@ src/main/java/com/pluralsight
 - `Program.java` starts the application.
 ```
 
+## Diagram V.1
+![diagram-v1.png](images/diagram-v1.png)
+
 ## Screenshots
 ![home-screen.png](images/home-screen.png)
 ![order-screen.png](images/order-screen.png)
