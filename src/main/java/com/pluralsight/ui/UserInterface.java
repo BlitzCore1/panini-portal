@@ -89,6 +89,10 @@ public class UserInterface
                 case "0":
                     ordering = false;
                     break;
+
+                default:
+                    System.out.println("Invalid selection. Please try again.");
+                    break;
             }
 
         }

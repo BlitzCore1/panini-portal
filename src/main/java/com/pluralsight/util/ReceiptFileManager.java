@@ -24,7 +24,11 @@ public class ReceiptFileManager
                 folder.mkdirs();  // will create directory if one doesn't exist
             }
         }
-        finally {}
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return; // exit if we can't create the directory
+        }
 
         String fileName = generateReceiptFileName();
         File file = new File(filePath, fileName);
