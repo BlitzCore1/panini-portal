@@ -1,6 +1,7 @@
 package com.pluralsight.ui;
 
 import com.pluralsight.models.*;
+import com.pluralsight.util.ReceiptFileManager;
 
 import java.util.Scanner;
 
@@ -79,7 +80,10 @@ public class UserInterface
                     break;
 
                 case "4":
-                    checkout(order);
+                    if (checkout(order))
+                    {
+                        ordering = false;
+                    }
                     break;
 
                 case "0":
@@ -127,6 +131,13 @@ public class UserInterface
                 ToppingCategory.SAUCE,
                 "Sauces",
                 new String[]{"mayo", "mustard", "ketchup", "ranch", "thousand islands", "vinaigrette"}
+        );
+
+        addToppingsByCategory(
+                sandwich,
+                ToppingCategory.SIDE,
+                "Sides",
+                new String[]{"au jus", "pepper", "oregano", "salt"}
         );
 
         order.addOrderItem(sandwich);
@@ -215,6 +226,7 @@ public class UserInterface
             System.out.println("2) Wheat");
             System.out.println("3) Rye");
             System.out.println("4) Wrap");
+            System.out.println("0) Cancel");
             System.out.print("Choose an option: ");
 
             String choice = userInput.nextLine().trim();
@@ -229,6 +241,7 @@ public class UserInterface
                 case "4":
                     return BreadType.WRAP;
                 case "0":
+                    break;
 
                 default:
                     System.out.println("Invalid bread choice. Please try again.");
@@ -237,11 +250,125 @@ public class UserInterface
     }
 
     public void addDrink(Order order)
-    {}
+    {
+        System.out.println();
+        System.out.println("===== Add Drink =====");
+        System.out.println("Select a drink cup size:");
+        System.out.println("1) Small");
+        System.out.println("2) Medium");
+        System.out.println("3) Large");
+        System.out.println("0) Cancel");
+        System.out.print("Choose an option: ");
+
+        String choice = userInput.nextLine().trim();
+
+        String size = null;
+
+        switch (choice) {
+            case "1":   // adds small drink to the order
+                size = "Small";
+                break;
+            case "2":   // adds medium drink to the order
+                size = "Medium";
+                break;
+            case "3":   // adds large drink to the order
+                size = "Large";
+                break;
+            case "0":
+                return;
+            default:
+                System.out.println("Invalid drink size choice. Please try again.");
+                return;
+
+        }
+
+        Drink drink = new Drink(size);
+        order.addOrderItem(drink);
+        System.out.println(size + " Drink added to order.");
+    }
 
     public void addChips(Order order)
-    {}
+    {
+        System.out.println();
+        System.out.println("===== Add Chips =====");
+        System.out.println("Select a chips flavor:");
+        System.out.println("1) Original");
+        System.out.println("2) BBQ");
+        System.out.println("3) Sour Cream & Onion");
+        System.out.println("0) Cancel");
+        System.out.print("Choose an option: ");
 
-     public void checkout(Order order)
-    {}
+        String choice = userInput.nextLine().trim();
+
+        String type = null;
+
+        switch (choice) {
+            case "1":   // adds original chips to the order
+                type = "Original";
+                break;
+            case "2":   // adds BBQ chips to the order
+                type = "BBQ";
+                break;
+            case "3":   // adds sour cream & onion chips to the order
+                type = "Sour Cream & Onion";
+                break;
+            case "0":
+                return;
+            default:
+                System.out.println("Invalid chips flavor choice. Please try again.");
+                return;
+
+        }
+
+        Chips chips = new Chips(type);
+        order.addOrderItem(chips);
+        System.out.println(type + " Chips added to order.");
+
+    }
+
+     public boolean checkout(Order order)
+    {
+        if(order.isEmpty())
+        {
+            System.out.println();
+            System.out.println("Your order is empty. Please add items before checking out!");
+            return false;
+        }
+
+        System.out.println();
+        System.out.println("================================");
+        System.out.println("           CHECKOUT");
+        System.out.println("================================");
+        System.out.println(order.getReceipt());
+
+        System.out.println();
+        System.out.println("1) Confirm and Pay");
+        System.out.println("2) Cancel Order");
+        System.out.println("0) Return to order screen");
+        System.out.print("Choose an option: ");
+
+        String choice = userInput.nextLine().trim();
+
+        switch (choice) {
+            case "1":
+                ReceiptFileManager currentOrder = new ReceiptFileManager();
+                currentOrder.saveReceipt(order);
+
+                System.out.println("Thank you for your order! Your receipt has been saved.");
+                return true;
+
+            case "2":
+                System.out.println("Order cancelled. Returning to home screen.");
+                return true;
+
+            case "0":
+                System.out.println("Checkout cancelled. Returning to order screen.");
+                return false;
+
+            default:
+                System.out.println("Invalid selection. Returning to order screen.");
+                return false;
+
+        }
+    }
 }

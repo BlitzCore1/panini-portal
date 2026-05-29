@@ -21,7 +21,7 @@ public class ReceiptFileManager
         {
             File folder = new File(filePath);
             if (!folder.exists()) {
-                folder.mkdirs();  // will create directory if one doesn't exists
+                folder.mkdirs();  // will create directory if one doesn't exist
             }
         }
         finally {}
