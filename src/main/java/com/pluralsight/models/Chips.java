@@ -18,7 +18,7 @@ public class Chips implements OrderItem
     @Override
     public String getReceiptLine()
     {
-        return type + " chips - $" + getPrice();
+        return String.format("%s chips - $%.2f", type, getPrice());
     }
 
     public String getType()

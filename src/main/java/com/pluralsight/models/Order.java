@@ -38,17 +38,13 @@ public class Order
         {
             receipt.append(item.getReceiptLine()).append("\n");
         }
-        receipt.append("Total: $").append(getTotal());
+        receipt.append("Total: $").append(String.format("%.2f", getTotal()));
         return receipt.toString();
     }
 
     public boolean isEmpty()
     {
-        if (items.isEmpty())
-        {
-            System.out.println("Your order is empty.");
-        }
-
+        items.isEmpty();
         return items.isEmpty();
     }
 }

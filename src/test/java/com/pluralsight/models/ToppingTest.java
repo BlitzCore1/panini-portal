@@ -11,7 +11,7 @@ class ToppingTest {
     {
         // arrange
         Topping topping = new Topping("onions", ToppingCategory.REGULAR, false);
-        int sandwichSize = 2; // 8-inch sandwich
+        int sandwichSize = 8; // 8-inch sandwich
         double expectedPrice = 0.00;
 
         // act
@@ -43,7 +43,7 @@ class ToppingTest {
     {
         // arrange
         Topping topping = new Topping("bacon", ToppingCategory.MEAT, true);
-        int sandwichSize = 2 ; // 8-inch sandwich
+        int sandwichSize = 8 ; // 8-inch sandwich
         double expectedPrice = 3.00; // $2 for the meat + $1 for the extra meat = $3 total
 
         // act
@@ -59,7 +59,7 @@ class ToppingTest {
     {
         // arrange
         Topping topping = new Topping("cheddar", ToppingCategory.CHEESE, false);
-        int sandwichSize = 2; // 8-inch sandwich
+        int sandwichSize = 8; // 8-inch sandwich
         double expectedPrice = 1.50;
 
         // act
@@ -74,7 +74,7 @@ class ToppingTest {
     void getExtraCheesePrice_shouldReturnTwoPointOne_whenToppingIsCheeseExtra() {
         // arrange
         Topping topping = new Topping("cheddar", ToppingCategory.CHEESE, true);
-        int sandwichSize = 2; // 8-inch sandwich
+        int sandwichSize = 8; // 8-inch sandwich
         double expectedPrice = 2.10; // $1.50 for the cheese + $0.60 for the extra cheese = $2.10 total
 
         // act

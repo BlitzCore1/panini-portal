@@ -23,7 +23,7 @@ public class Drink implements OrderItem
     @Override
     public String getReceiptLine()
     {
-        return size + " drink - $" + getPrice();
+        return String.format("%s drink - $%.2f", size, getPrice());
     }
 
     public String getSize()
