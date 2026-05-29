@@ -226,7 +226,6 @@ public class UserInterface
             System.out.println("2) Wheat");
             System.out.println("3) Rye");
             System.out.println("4) Wrap");
-            System.out.println("0) Cancel");
             System.out.print("Choose an option: ");
 
             String choice = userInput.nextLine().trim();
@@ -240,9 +239,6 @@ public class UserInterface
                     return BreadType.RYE;
                 case "4":
                     return BreadType.WRAP;
-                case "0":
-                    break;
-
                 default:
                     System.out.println("Invalid bread choice. Please try again.");
             }
